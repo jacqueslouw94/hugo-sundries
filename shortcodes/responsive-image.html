@@ -26,7 +26,7 @@
 src="{{ $image_path }}" {{ if $sizes }}sizes="{{ $sizes }}"{{ end }} {{ if (.Get "alt") }}alt="{{ (.Get "alt") }}"{{ end }} {{ if (.Get "title") }}title="{{ (.Get "title") }}"{{ end }} {{ if (.Get "data_dimensions") }}data-dimensions="{{ (.Get "data_dimensions") }}"{{ end }} {{ if (.Get "data_object_fit") }}data-object-fit="{{ (.Get "data_object_fit") }}"{{ end }} {{ if (and $class (not $caption) )}}class="{{ $class }}"{{ end }} {{ (.Get "img_attrs") | safeHTMLAttr }} />
 {{- if $image_link -}}</a>{{- end -}}
 {{- if $caption -}}
-<figcaption>{{ $caption }}</figcaption>
+<figcaption>{{ $caption | markdownify }}</figcaption>
 </figure>
 {{- end -}}
 {{ end }}
